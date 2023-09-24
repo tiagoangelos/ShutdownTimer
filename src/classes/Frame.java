@@ -1,6 +1,5 @@
 package classes;
 
-import java.awt.Toolkit;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -67,7 +66,7 @@ public class Frame extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("V 1.0");
+        jLabel3.setText("V 1.1");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
         jLabel4.setText("O Quê Fazer?");
@@ -92,7 +91,7 @@ public class Frame extends javax.swing.JFrame {
         CbMaintainSchedule.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jLabel6.setText("Desligar Após");
+        jLabel6.setText("Começar Após");
 
         SpinnerHour.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SpinnerHour.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
