@@ -11,23 +11,23 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="MenuAbout">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sobre"/>
+            <Property name="text" type="java.lang.String" value="About"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuAboutMouseClicked"/>
           </Events>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="MenuHelp">
+        <Menu class="javax.swing.JMenu" name="MenuHowToUse">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ajuda"/>
+            <Property name="text" type="java.lang.String" value="How To Use"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuHelpMouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuHowToUseMouseClicked"/>
           </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuVisit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Visitar"/>
+            <Property name="text" type="java.lang.String" value="Visit Us"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuVisitMouseClicked"/>
@@ -35,12 +35,12 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuHelp1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mais"/>
+            <Property name="text" type="java.lang.String" value="More"/>
           </Properties>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="MenuTurnOffNow">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Desligar Agora"/>
+                <Property name="text" type="java.lang.String" value="Turn Off"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuTurnOffNowMouseClicked"/>
@@ -48,7 +48,7 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="MenuLogOffNow">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Logoff Agora"/>
+                <Property name="text" type="java.lang.String" value="Logoff Now"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuLogOffNowMouseClicked"/>
@@ -56,7 +56,7 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="MenuExit">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sair"/>
+                <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MenuExitNowMouseClicked"/>
@@ -92,7 +92,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
@@ -112,13 +112,13 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CbDisableHibernation" alignment="0" pref="414" max="32767" attributes="0"/>
+                          <Component id="CbDisableHibernation" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                                   <Component id="CbMaintainSchedule" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel5" min="-2" pref="171" max="-2" attributes="0"/>
+                                      <Component id="jLabel5" min="-2" pref="142" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="BoxCombo" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -129,7 +129,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -147,10 +147,15 @@
                                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="BtnStart" alignment="0" pref="410" max="32767" attributes="0"/>
-                          <Component id="BtnCancel" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="BtnCancel" alignment="0" max="32767" attributes="0"/>
+                          <Component id="BtnStart" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -193,9 +198,9 @@
                   <Component id="SpinnerMinute" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="SpinnerSecond" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
               <Component id="BtnStart" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="BtnCancel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="22" max="32767" attributes="0"/>
           </Group>
@@ -243,7 +248,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="12" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="V 1.1"/>
+        <Property name="text" type="java.lang.String" value="V 1.5"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -251,7 +256,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="19" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="O Qu&#xea; Fazer?"/>
+        <Property name="text" type="java.lang.String" value="What to do?"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -259,7 +264,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Selecione uma A&#xe7;&#xe3;o:"/>
+        <Property name="text" type="java.lang.String" value="Select an Action:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JComboBox" name="BoxCombo">
@@ -269,8 +274,8 @@
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">
-            <StringItem index="0" value="Desligar"/>
-            <StringItem index="1" value="Reiniciar"/>
+            <StringItem index="0" value="Turn Off"/>
+            <StringItem index="1" value="Restart"/>
           </StringArray>
         </Property>
       </Properties>
@@ -283,7 +288,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Impedir que o sistema entre no modo Hibernar"/>
+        <Property name="text" type="java.lang.String" value="Prevent the system from going into Hibernate mode"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="CbDisableHibernationMouseClicked"/>
@@ -295,7 +300,7 @@
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
         <Property name="selected" type="boolean" value="true"/>
-        <Property name="text" type="java.lang.String" value="Manter Agendamento Apos Sair Do Programa"/>
+        <Property name="text" type="java.lang.String" value="Maintain Action After Exiting the Program"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
@@ -304,7 +309,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="19" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Come&#xe7;ar Ap&#xf3;s"/>
+        <Property name="text" type="java.lang.String" value="Start After "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="SpinnerHour">
@@ -322,7 +327,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Horas"/>
+        <Property name="text" type="java.lang.String" value="Hours"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
@@ -330,7 +335,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Minutos"/>
+        <Property name="text" type="java.lang.String" value="Minutes"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="SpinnerMinute">
@@ -348,7 +353,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Segundos"/>
+        <Property name="text" type="java.lang.String" value="Seconds"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="SpinnerSecond">
@@ -366,7 +371,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="20" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Come&#xe7;ar"/>
+        <Property name="text" type="java.lang.String" value="Start"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnStartActionPerformed"/>
@@ -377,7 +382,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="20" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cancelar"/>
+        <Property name="text" type="java.lang.String" value="Cancel"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnCancelActionPerformed"/>

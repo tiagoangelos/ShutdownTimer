@@ -4,7 +4,9 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class Frame extends javax.swing.JFrame {
-
+    
+    Shutdown shutdown = new Shutdown();
+    
     public Frame() {
         initComponents();
     }
@@ -34,7 +36,7 @@ public class Frame extends javax.swing.JFrame {
         BtnCancel = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         MenuAbout = new javax.swing.JMenu();
-        MenuHelp = new javax.swing.JMenu();
+        MenuHowToUse = new javax.swing.JMenu();
         MenuVisit = new javax.swing.JMenu();
         MenuHelp1 = new javax.swing.JMenu();
         MenuTurnOffNow = new javax.swing.JMenu();
@@ -66,19 +68,19 @@ public class Frame extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("V 1.1");
+        jLabel3.setText("V 1.5");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jLabel4.setText("O Quê Fazer?");
+        jLabel4.setText("What to do?");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Selecione uma Ação:");
+        jLabel5.setText("Select an Action:");
 
         BoxCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BoxCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Desligar", "Reiniciar" }));
+        BoxCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turn Off", "Restart" }));
 
         CbDisableHibernation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        CbDisableHibernation.setText("Impedir que o sistema entre no modo Hibernar");
+        CbDisableHibernation.setText("Prevent the system from going into Hibernate mode");
         CbDisableHibernation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 CbDisableHibernationMouseClicked(evt);
@@ -87,32 +89,32 @@ public class Frame extends javax.swing.JFrame {
 
         CbMaintainSchedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CbMaintainSchedule.setSelected(true);
-        CbMaintainSchedule.setText("Manter Agendamento Apos Sair Do Programa");
+        CbMaintainSchedule.setText("Maintain Action After Exiting the Program");
         CbMaintainSchedule.setEnabled(false);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jLabel6.setText("Começar Após");
+        jLabel6.setText("Start After ");
 
         SpinnerHour.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SpinnerHour.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Horas");
+        jLabel7.setText("Hours");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Minutos");
+        jLabel8.setText("Minutes");
 
         SpinnerMinute.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SpinnerMinute.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("Segundos");
+        jLabel9.setText("Seconds");
 
         SpinnerSecond.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         SpinnerSecond.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
 
         BtnStart.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        BtnStart.setText("Começar");
+        BtnStart.setText("Start");
         BtnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnStartActionPerformed(evt);
@@ -120,14 +122,14 @@ public class Frame extends javax.swing.JFrame {
         });
 
         BtnCancel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        BtnCancel.setText("Cancelar");
+        BtnCancel.setText("Cancel");
         BtnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCancelActionPerformed(evt);
             }
         });
 
-        MenuAbout.setText("Sobre");
+        MenuAbout.setText("About");
         MenuAbout.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuAboutMouseClicked(evt);
@@ -135,15 +137,15 @@ public class Frame extends javax.swing.JFrame {
         });
         jMenuBar2.add(MenuAbout);
 
-        MenuHelp.setText("Ajuda");
-        MenuHelp.addMouseListener(new java.awt.event.MouseAdapter() {
+        MenuHowToUse.setText("How To Use");
+        MenuHowToUse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                MenuHelpMouseClicked(evt);
+                MenuHowToUseMouseClicked(evt);
             }
         });
-        jMenuBar2.add(MenuHelp);
+        jMenuBar2.add(MenuHowToUse);
 
-        MenuVisit.setText("Visitar");
+        MenuVisit.setText("Visit Us");
         MenuVisit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuVisitMouseClicked(evt);
@@ -151,9 +153,9 @@ public class Frame extends javax.swing.JFrame {
         });
         jMenuBar2.add(MenuVisit);
 
-        MenuHelp1.setText("Mais");
+        MenuHelp1.setText("More");
 
-        MenuTurnOffNow.setText("Desligar Agora");
+        MenuTurnOffNow.setText("Turn Off");
         MenuTurnOffNow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuTurnOffNowMouseClicked(evt);
@@ -161,7 +163,7 @@ public class Frame extends javax.swing.JFrame {
         });
         MenuHelp1.add(MenuTurnOffNow);
 
-        MenuLogOffNow.setText("Logoff Agora");
+        MenuLogOffNow.setText("Logoff Now");
         MenuLogOffNow.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuLogOffNowMouseClicked(evt);
@@ -169,7 +171,7 @@ public class Frame extends javax.swing.JFrame {
         });
         MenuHelp1.add(MenuLogOffNow);
 
-        MenuExit.setText("Sair");
+        MenuExit.setText("Exit");
         MenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 MenuExitNowMouseClicked(evt);
@@ -201,19 +203,19 @@ public class Frame extends javax.swing.JFrame {
                         .addGap(25, 25, 25))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CbDisableHibernation, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+                            .addComponent(CbDisableHibernation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(CbMaintainSchedule)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(BoxCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,10 +228,13 @@ public class Frame extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(SpinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9)))
-                            .addComponent(BtnStart, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-                            .addComponent(BtnCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jLabel9))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(BtnCancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(BtnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -264,9 +269,9 @@ public class Frame extends javax.swing.JFrame {
                     .addComponent(SpinnerHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SpinnerMinute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SpinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
+                .addGap(35, 35, 35)
                 .addComponent(BtnStart)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(BtnCancel)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
@@ -275,101 +280,53 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
       
     private void MenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuAboutMouseClicked
-        JOptionPane.showMessageDialog(null, "'Shuwdown Timer' é um software para agendar a ação de\n Desligar e Reiniciar Seu Sistema. Além de Fazer Logoff\n ou Desligar de Imediato!");
+        JOptionPane.showMessageDialog(null, ""
+                + "Shutdown Timer © 1.5\n\n"
+                + "• Shutdown Timer is software designed to schedule Windows\n"
+                + "functions, such as shutting down, restarting,\n"
+                + "among other actions."
+                , "About", JOptionPane.INFORMATION_MESSAGE
+        );
     }//GEN-LAST:event_MenuAboutMouseClicked
 
-    private void MenuHelpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHelpMouseClicked
-        JOptionPane.showMessageDialog(null, "Para usar é bem simples, informe qual ação deseja fazer exemplo: Agendar ação de Desligar ou Reiniciar.\n em seguida informe as horas minutos ou segundos, após isso basta clicar em Começar!");
-    }//GEN-LAST:event_MenuHelpMouseClicked
+    private void MenuHowToUseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuHowToUseMouseClicked
+        JOptionPane.showMessageDialog(null, ""
+                + "How To Use\n\n"
+                + "• To use it, it's very simple, enter which action\n"
+                + "you want to perform, for example: Schedule Turn Off\n"
+                + "or Restart action. Then enter the hours, minutes or\n"
+                + "seconds, after that just click Start."
+                , "How To Use", JOptionPane.INFORMATION_MESSAGE
+        );
+    }//GEN-LAST:event_MenuHowToUseMouseClicked
 
     private void MenuVisitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuVisitMouseClicked
         try {
-            Runtime.getRuntime().exec("cmd.exe /C start " + "https://github.com/jtas20/shutdown-timer");
+            Runtime.getRuntime().exec("cmd.exe /C start " + "https://github.com/jtas20/shutdownTimer");
         } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "O Projeto 'Shutdown Timer' é um projeto Código aberto. \n caso deseje retomar o projeto ou melhoralo basta acessar: 'https://github.com/jtas20/shutdown-Timer'!");
+            JOptionPane.showMessageDialog(null, ""
+                + "Error when trying to open link!\n\n"
+                + "• An error occurred when trying to open\n"
+                + "the link in your browser, try accessing\n"
+                + "it yourself. link:\n"
+                + "'https://github.com/jtas20/shutdownTimer'.\n"
+                , "How To Use", JOptionPane.WARNING_MESSAGE
+            );
         }
     }//GEN-LAST:event_MenuVisitMouseClicked
 
     private void MenuTurnOffNowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuTurnOffNowMouseClicked
-        try {
-            Runtime.getRuntime().exec("shutdown -p");
-            JOptionPane.showMessageDialog(null, "Seu Sistema Irá Desligar Agora!");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro: " + ex);
-        }
+        shutdown.turnOffNow();
     }//GEN-LAST:event_MenuTurnOffNowMouseClicked
 
     private void MenuLogOffNowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuLogOffNowMouseClicked
-        try {
-            Runtime.getRuntime().exec("shutdown -l");
-            JOptionPane.showMessageDialog(null, "Fazendo LogOff em seu sistema Agora!");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro: " + ex);
-        }
+        shutdown.logOffNow();
     }//GEN-LAST:event_MenuLogOffNowMouseClicked
                                   
     private void CbDisableHibernationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CbDisableHibernationMouseClicked
         boolean boxIsSelected = CbDisableHibernation.isSelected();
-
-        if (boxIsSelected == true) {
-            try {
-                Runtime.getRuntime().exec("powercfg.exe /hibernate off");
-                JOptionPane.showMessageDialog(null, "Desabilitação de Hibernar Com Sucesso!");
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Você precisa usar no modo administrador esse programa!");
-            }
-        } else {
-            try {
-                Runtime.getRuntime().exec("powercfg.exe /hibernate on");
-                JOptionPane.showMessageDialog(null, "Abilitação de Hibernar Com Sucesso!");
-            } catch (IOException ex) {
-                JOptionPane.showMessageDialog(null, "Você precisa usar no modo administrador esse programa!");
-            }
-        }
+        shutdown.HibernateConfig(boxIsSelected);
     }//GEN-LAST:event_CbDisableHibernationMouseClicked
-
-    private boolean verifyIfTimeWasTyped(int hour, int minute, int second) {
-        if (hour == 0 && minute == 0 && second == 0) {
-            JOptionPane.showMessageDialog(null, "Ops! Por favor, informe em quanto tempo deseja agendar alguma ação!");
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    private int convertTime(int hour, int minute, int second) {
-        int hourConverted = hour * 60 * 60;
-        int minuteConverted = minute * 60;
-        int secondConverted = second;
-
-        int convertedTime = hourConverted + minuteConverted + secondConverted;
-
-        return convertedTime;
-    }
-
-    private void turnOff(int hour, int minute, int second) {
-        int time = convertTime(hour, minute, second);
-
-        try {
-            Runtime.getRuntime().exec("shutdown -a");
-            Runtime.getRuntime().exec("shutdown -s -t " + time);
-            JOptionPane.showMessageDialog(null, "Seu Sistema Irá Desligar em: " + hour + " Horas " + minute + " Minutos e " + second + " Segundos.");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um Erro: " + ex);
-        }
-    }
-
-    private void restart(int hour, int minute, int second) {
-        int time = convertTime(hour, minute, second);
-
-        try {
-            Runtime.getRuntime().exec("shutdown -a");
-            Runtime.getRuntime().exec("shutdown -r -t " + time);
-            JOptionPane.showMessageDialog(null, "Seu Sistema Irá Reiniciar em: " + hour + " Horas " + minute + " Minutos e " + second + " Segundos.");
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um Erro: " + ex);
-        }
-    }
 
     private void BtnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnStartActionPerformed
         int actionSelected = BoxCombo.getSelectedIndex();
@@ -377,28 +334,23 @@ public class Frame extends javax.swing.JFrame {
         int minuteTyped = (int) SpinnerMinute.getValue();
         int secondTyped = (int) SpinnerSecond.getValue();
 
-        boolean timeWasTyped = verifyIfTimeWasTyped(hourTyped, minuteTyped, secondTyped);
+        boolean timeWasTyped = shutdown.verifyTime(hourTyped, minuteTyped, secondTyped);
 
         if (actionSelected == 0 && timeWasTyped == true) {
-            turnOff(hourTyped, minuteTyped, secondTyped);
+            shutdown.turnOff(hourTyped, minuteTyped, secondTyped);
         } else if (actionSelected == 1 && timeWasTyped == true) {
-            restart(hourTyped, minuteTyped, secondTyped);
+            shutdown.restart(hourTyped, minuteTyped, secondTyped);
         } else {
 
         }
     }//GEN-LAST:event_BtnStartActionPerformed
     
     private void BtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelActionPerformed
-        try {
-            Runtime.getRuntime().exec("shutdown -a");
-            JOptionPane.showMessageDialog(null, "Agendamento de todas as ações foram canceladas com sucesso!");  
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ocorreu um erro: " + ex);
-        }
+        shutdown.cancelAll();
     }//GEN-LAST:event_BtnCancelActionPerformed
 
     private void MenuExitNowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuExitNowMouseClicked
-        System.exit(0);
+        shutdown.exitProgram();
     }//GEN-LAST:event_MenuExitNowMouseClicked
 
     public static void main(String args[]) {
@@ -416,8 +368,8 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JCheckBox CbMaintainSchedule;
     private javax.swing.JMenu MenuAbout;
     private javax.swing.JMenu MenuExit;
-    private javax.swing.JMenu MenuHelp;
     private javax.swing.JMenu MenuHelp1;
+    private javax.swing.JMenu MenuHowToUse;
     private javax.swing.JMenu MenuLogOffNow;
     private javax.swing.JMenu MenuTurnOffNow;
     private javax.swing.JMenu MenuVisit;
