@@ -9,4 +9,4 @@ usada para para executar as aplicações da plataforma Java. <a href="https://ww
 
 ## Usar:
 
-Se deseja apenas usar essa aplicação então baixe apenas o instalador 'Shutdown-Timer-Installer.exe'.
+Se deseja apenas usar essa aplicação então baixe apenas o instalador <a href="https://github.com/jtas20/ShutdownTimer/blob/main/Shutdown-Timer-Installer.exe">'Shutdown-Timer-Installer.exe'</a>.
