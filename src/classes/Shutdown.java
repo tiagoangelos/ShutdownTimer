@@ -31,18 +31,6 @@ public class Shutdown {
         }
     }
     
-    public void exitProgram(){
-        int response = JOptionPane.showConfirmDialog(null,
-              "Exit Program \n\n"
-            + "• Do you want to exit the program ?"
-            , "Exit Program", JOptionPane.INFORMATION_MESSAGE
-        );
-        
-        if(response == JOptionPane.YES_OPTION){
-            System.exit(0);
-        } 
-    }
-  
     public void HibernateConfig(boolean boxIsSelected){
         if (boxIsSelected == true) {
             try {

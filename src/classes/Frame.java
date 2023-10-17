@@ -2,13 +2,18 @@ package classes;
 
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 public class Frame extends javax.swing.JFrame {
     
     Shutdown shutdown = new Shutdown();
-    
+    String appName = "Shutdown Timer";
+    String appVersion = "V 2.0";
+     
     public Frame() {
         initComponents();
+        titleLbl.setText(appName);
+        versionLbl.setText(appVersion);
     }
 
     @SuppressWarnings("unchecked")
@@ -16,29 +21,29 @@ public class Frame extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        BoxCombo = new javax.swing.JComboBox<>();
-        CbDisableHibernation = new javax.swing.JCheckBox();
-        CbMaintainSchedule = new javax.swing.JCheckBox();
-        jLabel6 = new javax.swing.JLabel();
-        SpinnerHour = new javax.swing.JSpinner();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        SpinnerMinute = new javax.swing.JSpinner();
-        jLabel9 = new javax.swing.JLabel();
-        SpinnerSecond = new javax.swing.JSpinner();
-        BtnStart = new javax.swing.JButton();
-        BtnCancel = new javax.swing.JButton();
-        jMenuBar2 = new javax.swing.JMenuBar();
+        titleLbl = new javax.swing.JLabel();
+        logoLbl = new javax.swing.JLabel();
+        barPanel = new javax.swing.JPanel();
+        versionLbl = new javax.swing.JLabel();
+        instructionLbl = new javax.swing.JLabel();
+        boxComboLbl = new javax.swing.JLabel();
+        boxCombo = new javax.swing.JComboBox<>();
+        cbMaintainSchedule = new javax.swing.JCheckBox();
+        cbDisableHibernation = new javax.swing.JCheckBox();
+        starAfterLbl = new javax.swing.JLabel();
+        hourLbl = new javax.swing.JLabel();
+        spinnerHour = new javax.swing.JSpinner();
+        minuteLbl = new javax.swing.JLabel();
+        spinnerMinute = new javax.swing.JSpinner();
+        secondsLbl = new javax.swing.JLabel();
+        spinnerSecond = new javax.swing.JSpinner();
+        btnStart = new javax.swing.JButton();
+        btnCancel = new javax.swing.JButton();
+        MenuBar = new javax.swing.JMenuBar();
         MenuAbout = new javax.swing.JMenu();
         MenuHowToUse = new javax.swing.JMenu();
         MenuVisit = new javax.swing.JMenu();
-        MenuHelp1 = new javax.swing.JMenu();
+        MenuMore = new javax.swing.JMenu();
         MenuTurnOffNow = new javax.swing.JMenu();
         MenuLogOffNow = new javax.swing.JMenu();
         MenuExit = new javax.swing.JMenu();
@@ -46,86 +51,89 @@ public class Frame extends javax.swing.JFrame {
         jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Shutdown Timer");
+        setTitle("Shutdown Timer 2.0");
+        setIconImage(new ImageIcon(getClass().getResource("/images/power-icon.png")).getImage());
+        setName("Shutdown Timer"); // NOI18N
+        setPreferredSize(null);
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Shutdown Timer");
+        titleLbl.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        titleLbl.setText("App Name");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/power-icon.png"))); // NOI18N
+        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/power-icon.png"))); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        barPanel.setBackground(new java.awt.Color(0, 0, 0));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout barPanelLayout = new javax.swing.GroupLayout(barPanel);
+        barPanel.setLayout(barPanelLayout);
+        barPanelLayout.setHorizontalGroup(
+            barPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        barPanelLayout.setVerticalGroup(
+            barPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 10, Short.MAX_VALUE)
         );
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel3.setText("V 1.5");
+        versionLbl.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        versionLbl.setText("App Version");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jLabel4.setText("What to do?");
+        instructionLbl.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        instructionLbl.setText("What to do?");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Select an Action:");
+        boxComboLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        boxComboLbl.setText("Select an Action:");
 
-        BoxCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        BoxCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turn Off", "Restart" }));
+        boxCombo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        boxCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Turn Off", "Restart" }));
 
-        CbDisableHibernation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        CbDisableHibernation.setText("Prevent the system from going into Hibernate mode");
-        CbDisableHibernation.addMouseListener(new java.awt.event.MouseAdapter() {
+        cbMaintainSchedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbMaintainSchedule.setSelected(true);
+        cbMaintainSchedule.setText("Maintain Action After Exiting the Program");
+        cbMaintainSchedule.setEnabled(false);
+
+        cbDisableHibernation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        cbDisableHibernation.setText("Prevent the system from going into Hibernate mode");
+        cbDisableHibernation.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CbDisableHibernationMouseClicked(evt);
+                cbDisableHibernationMouseClicked(evt);
             }
         });
 
-        CbMaintainSchedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        CbMaintainSchedule.setSelected(true);
-        CbMaintainSchedule.setText("Maintain Action After Exiting the Program");
-        CbMaintainSchedule.setEnabled(false);
+        starAfterLbl.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
+        starAfterLbl.setText("Start After ");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 19)); // NOI18N
-        jLabel6.setText("Start After ");
+        hourLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        hourLbl.setText("Hours");
 
-        SpinnerHour.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        SpinnerHour.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+        spinnerHour.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        spinnerHour.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Hours");
+        minuteLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        minuteLbl.setText("Minutes");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Minutes");
+        spinnerMinute.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        spinnerMinute.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
 
-        SpinnerMinute.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        SpinnerMinute.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
+        secondsLbl.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        secondsLbl.setText("Seconds");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("Seconds");
+        spinnerSecond.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        spinnerSecond.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
 
-        SpinnerSecond.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        SpinnerSecond.setModel(new javax.swing.SpinnerNumberModel(0, 0, 59, 1));
-
-        BtnStart.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        BtnStart.setText("Start");
-        BtnStart.addActionListener(new java.awt.event.ActionListener() {
+        btnStart.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnStart.setText("Start");
+        btnStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnStartActionPerformed(evt);
+                btnStartActionPerformed(evt);
             }
         });
 
-        BtnCancel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        BtnCancel.setText("Cancel");
-        BtnCancel.addActionListener(new java.awt.event.ActionListener() {
+        btnCancel.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
+        btnCancel.setText("Cancel");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCancelActionPerformed(evt);
+                btnCancelActionPerformed(evt);
             }
         });
 
@@ -135,7 +143,7 @@ public class Frame extends javax.swing.JFrame {
                 MenuAboutMouseClicked(evt);
             }
         });
-        jMenuBar2.add(MenuAbout);
+        MenuBar.add(MenuAbout);
 
         MenuHowToUse.setText("How To Use");
         MenuHowToUse.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -143,7 +151,7 @@ public class Frame extends javax.swing.JFrame {
                 MenuHowToUseMouseClicked(evt);
             }
         });
-        jMenuBar2.add(MenuHowToUse);
+        MenuBar.add(MenuHowToUse);
 
         MenuVisit.setText("Visit Us");
         MenuVisit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,9 +159,9 @@ public class Frame extends javax.swing.JFrame {
                 MenuVisitMouseClicked(evt);
             }
         });
-        jMenuBar2.add(MenuVisit);
+        MenuBar.add(MenuVisit);
 
-        MenuHelp1.setText("More");
+        MenuMore.setText("More");
 
         MenuTurnOffNow.setText("Turn Off");
         MenuTurnOffNow.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,7 +169,7 @@ public class Frame extends javax.swing.JFrame {
                 MenuTurnOffNowMouseClicked(evt);
             }
         });
-        MenuHelp1.add(MenuTurnOffNow);
+        MenuMore.add(MenuTurnOffNow);
 
         MenuLogOffNow.setText("Logoff Now");
         MenuLogOffNow.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -169,7 +177,7 @@ public class Frame extends javax.swing.JFrame {
                 MenuLogOffNowMouseClicked(evt);
             }
         });
-        MenuHelp1.add(MenuLogOffNow);
+        MenuMore.add(MenuLogOffNow);
 
         MenuExit.setText("Exit");
         MenuExit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -177,11 +185,11 @@ public class Frame extends javax.swing.JFrame {
                 MenuExitNowMouseClicked(evt);
             }
         });
-        MenuHelp1.add(MenuExit);
+        MenuMore.add(MenuExit);
 
-        jMenuBar2.add(MenuHelp1);
+        MenuBar.add(MenuMore);
 
-        setJMenuBar(jMenuBar2);
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,48 +200,48 @@ public class Frame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(barPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel3))
+                                .addComponent(versionLbl))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2)))
+                                .addComponent(logoLbl)))
                         .addGap(25, 25, 25))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CbDisableHibernation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cbDisableHibernation, javax.swing.GroupLayout.DEFAULT_SIZE, 454, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(CbMaintainSchedule)
+                                    .addComponent(instructionLbl)
+                                    .addComponent(cbMaintainSchedule)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(boxComboLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BoxCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(boxCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
+                            .addComponent(starAfterLbl)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(SpinnerHour, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(hourLbl)
+                                    .addComponent(spinnerHour, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SpinnerMinute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel8))
+                                    .addComponent(spinnerMinute, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(minuteLbl))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(SpinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9))))
+                                    .addComponent(spinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(secondsLbl))))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(BtnCancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(BtnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnCancel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -241,42 +249,43 @@ public class Frame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logoLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(titleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(barPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
+                .addComponent(versionLbl)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
+                .addComponent(instructionLbl)
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(BoxCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boxComboLbl)
+                    .addComponent(boxCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CbMaintainSchedule)
+                .addComponent(cbMaintainSchedule)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(CbDisableHibernation)
+                .addComponent(cbDisableHibernation)
                 .addGap(38, 38, 38)
-                .addComponent(jLabel6)
+                .addComponent(starAfterLbl)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(hourLbl)
+                    .addComponent(minuteLbl)
+                    .addComponent(secondsLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SpinnerHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SpinnerMinute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SpinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(spinnerHour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerMinute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spinnerSecond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(BtnStart)
+                .addComponent(btnStart)
                 .addGap(18, 18, 18)
-                .addComponent(BtnCancel)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addComponent(btnCancel)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
       
     private void MenuAboutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuAboutMouseClicked
@@ -323,16 +332,16 @@ public class Frame extends javax.swing.JFrame {
         shutdown.logOffNow();
     }//GEN-LAST:event_MenuLogOffNowMouseClicked
                                   
-    private void CbDisableHibernationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CbDisableHibernationMouseClicked
-        boolean boxIsSelected = CbDisableHibernation.isSelected();
+    private void cbDisableHibernationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbDisableHibernationMouseClicked
+        boolean boxIsSelected = cbDisableHibernation.isSelected();
         shutdown.HibernateConfig(boxIsSelected);
-    }//GEN-LAST:event_CbDisableHibernationMouseClicked
+    }//GEN-LAST:event_cbDisableHibernationMouseClicked
 
-    private void BtnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnStartActionPerformed
-        int actionSelected = BoxCombo.getSelectedIndex();
-        int hourTyped = (int) SpinnerHour.getValue();
-        int minuteTyped = (int) SpinnerMinute.getValue();
-        int secondTyped = (int) SpinnerSecond.getValue();
+    private void btnStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStartActionPerformed
+        int actionSelected = boxCombo.getSelectedIndex();
+        int hourTyped = (int) spinnerHour.getValue();
+        int minuteTyped = (int) spinnerMinute.getValue();
+        int secondTyped = (int) spinnerSecond.getValue();
 
         boolean timeWasTyped = shutdown.verifyTime(hourTyped, minuteTyped, secondTyped);
 
@@ -343,14 +352,22 @@ public class Frame extends javax.swing.JFrame {
         } else {
 
         }
-    }//GEN-LAST:event_BtnStartActionPerformed
+    }//GEN-LAST:event_btnStartActionPerformed
     
-    private void BtnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelActionPerformed
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         shutdown.cancelAll();
-    }//GEN-LAST:event_BtnCancelActionPerformed
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     private void MenuExitNowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MenuExitNowMouseClicked
-        shutdown.exitProgram();
+        int response = JOptionPane.showConfirmDialog(null,
+              "Exit Program \n\n"
+            + "• Do you want to exit the program ?"
+            , "Exit Program", JOptionPane.INFORMATION_MESSAGE
+        );
+        
+        if(response == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
     }//GEN-LAST:event_MenuExitNowMouseClicked
 
     public static void main(String args[]) {
@@ -361,32 +378,32 @@ public class Frame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> BoxCombo;
-    private javax.swing.JButton BtnCancel;
-    private javax.swing.JButton BtnStart;
-    private javax.swing.JCheckBox CbDisableHibernation;
-    private javax.swing.JCheckBox CbMaintainSchedule;
     private javax.swing.JMenu MenuAbout;
+    private javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu MenuExit;
-    private javax.swing.JMenu MenuHelp1;
     private javax.swing.JMenu MenuHowToUse;
     private javax.swing.JMenu MenuLogOffNow;
+    private javax.swing.JMenu MenuMore;
     private javax.swing.JMenu MenuTurnOffNow;
     private javax.swing.JMenu MenuVisit;
-    private javax.swing.JSpinner SpinnerHour;
-    private javax.swing.JSpinner SpinnerMinute;
-    private javax.swing.JSpinner SpinnerSecond;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JPanel barPanel;
+    private javax.swing.JComboBox<String> boxCombo;
+    private javax.swing.JLabel boxComboLbl;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnStart;
+    private javax.swing.JCheckBox cbDisableHibernation;
+    private javax.swing.JCheckBox cbMaintainSchedule;
+    private javax.swing.JLabel hourLbl;
+    private javax.swing.JLabel instructionLbl;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel logoLbl;
+    private javax.swing.JLabel minuteLbl;
+    private javax.swing.JLabel secondsLbl;
+    private javax.swing.JSpinner spinnerHour;
+    private javax.swing.JSpinner spinnerMinute;
+    private javax.swing.JSpinner spinnerSecond;
+    private javax.swing.JLabel starAfterLbl;
+    private javax.swing.JLabel titleLbl;
+    private javax.swing.JLabel versionLbl;
     // End of variables declaration//GEN-END:variables
 }
