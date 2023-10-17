@@ -1,4 +1,4 @@
-# Shutdown-Timer 1.5
+# Shutdown-Timer 2.0
 
 <img src="./design/front-end/frame.png"></img>
 
